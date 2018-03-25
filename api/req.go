@@ -1,6 +1,6 @@
 package api
 
-import steamErr "steam-api/error"
+import steamErr "github.com/edmundluk3/steam-api/error"
 import (
 	"net/http"
 	"strings"

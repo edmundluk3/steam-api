@@ -1,8 +1,8 @@
 package app
 
 import (
-	"steam-api/api"
-	steamErr "steam-api/error"
+	"github.com/edmundluk3/steam-api/api"
+	steamErr "github.com/edmundluk3/steam-api/error"
 	"encoding/json"
 )
 

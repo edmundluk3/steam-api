@@ -14,7 +14,7 @@ func ApiGet(apiUrl string, endPoint string, path string, version string, payload
 	var payloadStr string
 
 	for k, v := range payload {
-		payloadStr += fmt.Sprintf("%s=%s", k,v)
+		payloadStr += fmt.Sprintf("%s=%s&", k,v)
 	}
 
 	urlList := []string{apiUrl, endPoint, path, version, "?" + payloadStr}

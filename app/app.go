@@ -128,7 +128,7 @@ func List() (*AppList, error) {
 	return &resp, nil
 }
 
-func Detail(id int, language string, cc string) (*AppDetail, error) {
+func Detail(id uint32, language string, cc string) (*AppDetail, error) {
 	resByte, err := api.GetAppDetail(id, language, cc)
 	if err != nil {
 		return nil, err
@@ -147,7 +147,7 @@ func Detail(id int, language string, cc string) (*AppDetail, error) {
 	found := false
 
 	for k, v := range list {
-		if i, err := strconv.Atoi(k); !found && err == nil && i == id {
+		if i, err := strconv.ParseInt(k, 10, 32); !found && err == nil && uint32(i) == id {
 			resp = v.Data
 			found = true
 		}

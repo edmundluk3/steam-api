@@ -19,7 +19,7 @@ func TestList(t *testing.T) {
 }
 
 func TestDetail(t *testing.T) {
-	const ID = 292030
+	const ID uint32 = 292030
 
 	detail, err := Detail(ID, "zh-cn", "cc")
 	if err != nil {

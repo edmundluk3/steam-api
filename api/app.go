@@ -1,7 +1,7 @@
 package api
 
 import (
-	"strconv"
+	_ "strconv"
 	"fmt"
 )
 
@@ -15,9 +15,9 @@ func GetAppList() ([]byte, error){
 	)
 }
 
-func GetAppDetail(appid int, language string, cc string) ([]byte, error) {
-	payload := map[string]string{
-		"appids": strconv.Itoa(appid),
+func GetAppDetail(appid uint32, language string, cc string) ([]byte, error) {
+	payload := map[string]interface{}{
+		"appids": appid,
 		"cc": cc,
 		"l": language,
 	}
@@ -31,13 +31,13 @@ func GetAppDetail(appid int, language string, cc string) ([]byte, error) {
 	)
 }
 
-func GetAppPrice(appids []int, cc string) ([]byte, error){
+func GetAppPrice(appids []uint32, cc string) ([]byte, error){
 	var ids string
 	for _, v := range appids {
 		ids += fmt.Sprintf("%d", v)
 	}
 
-	payload := map[string]string{
+	payload := map[string]interface{}{
 		"appids": ids,
 		"cc": cc,
 		"filters": "price_overview",

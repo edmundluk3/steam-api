@@ -3,6 +3,7 @@ package api
 import (
 	_ "strconv"
 	"fmt"
+	"github.com/edmundluk3/steam-api/model"
 )
 
 func GetAppList() ([]byte, error){
@@ -15,7 +16,7 @@ func GetAppList() ([]byte, error){
 	)
 }
 
-func GetAppDetail(appid uint32, language string, cc string) ([]byte, error) {
+func GetAppDetail(appid model.SteamAppID, language string, cc string) ([]byte, error) {
 	payload := map[string]interface{}{
 		"appids": appid,
 		"cc": cc,
@@ -31,10 +32,10 @@ func GetAppDetail(appid uint32, language string, cc string) ([]byte, error) {
 	)
 }
 
-func GetAppPrice(appids []uint32, cc string) ([]byte, error){
+func GetAppPrice(appids []model.SteamAppID, cc string) ([]byte, error){
 	var ids string
 	for _, v := range appids {
-		ids += fmt.Sprintf("%d", v)
+		ids += fmt.Sprintf("%d,", v)
 	}
 
 	payload := map[string]interface{}{

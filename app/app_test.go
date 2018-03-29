@@ -3,6 +3,7 @@ package app
 import (
 	"testing"
 	"log"
+	"github.com/edmundluk3/steam-api/model"
 )
 
 func TestList(t *testing.T) {
@@ -19,7 +20,7 @@ func TestList(t *testing.T) {
 }
 
 func TestDetail(t *testing.T) {
-	const ID uint32 = 292030
+	const ID model.SteamAppID = 292030
 
 	detail, err := Detail(ID, "zh-cn", "cc")
 	if err != nil {
@@ -31,4 +32,16 @@ func TestDetail(t *testing.T) {
 		t.Errorf("%v", detail)
 	}
 	log.Printf("%d: %s" ,detail.Appid, detail.Name)
+}
+
+func TestPrice(t *testing.T) {
+	ids :=  []model.SteamAppID{292030, 292939, 292025}
+
+	price, err := Price(ids, "cc")
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	log.Printf("%v", price)
 }

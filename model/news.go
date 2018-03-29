@@ -2,11 +2,12 @@ package model
 
 type (
 	NewsList struct {
-		AppNews struct {
-			AppId     SteamAppID `json:"appid"`
-			NewsItems []NewsItem `json:"newsitems"`
-			Count     uint       `json:"count"`
-		} `json:"appnews"`
+		AppNews AppNews `json:"appnews"`
+	}
+	AppNews struct {
+		AppId     SteamAppID `json:"appid"`
+		NewsItems []NewsItem `json:"newsitems"`
+		Count     uint       `json:"count"`
 	}
 
 	NewsItem struct {

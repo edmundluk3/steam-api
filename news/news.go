@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 )
 
-func List (id model.SteamAppID, count uint, max uint) (*model.NewsList, error) {
+func List (id model.SteamAppID, count uint, max uint) (*model.AppNews, error) {
 	resByte, err := api.GetNewsList(id, count, max)
 
 	if err != nil {
@@ -21,5 +21,5 @@ func List (id model.SteamAppID, count uint, max uint) (*model.NewsList, error) {
 		return nil, parseErr
 	}
 
-	return &resp, nil
+	return &resp.AppNews, nil
 }

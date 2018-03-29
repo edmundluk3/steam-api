@@ -16,7 +16,7 @@ func TestList(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	if len(list.AppNews.NewsItems) != count {
-		t.Errorf("count: %d not equal with %d", len(list.AppNews.NewsItems), count)
+	if len(list.NewsItems) != count {
+		t.Errorf("count: %d not equal with %d", len(list.NewsItems), count)
 	}
 }

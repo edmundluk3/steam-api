@@ -1,3 +1,13 @@
-h2. Steam HTTP Web API
+## Steam HTTP Web API
 
->> in Golang
+> in Golang
+
+### Features
+
+### Install
+```
+$ go get github.com/edmundluk3/steam-api
+```
+### Documentation
+
+### Contributors

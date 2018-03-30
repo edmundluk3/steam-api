@@ -37,7 +37,7 @@ func GetNumberOfCurrentPlayers(id model.SteamAppID) ([]byte, error) {
 	return ApiGet(
 		STEAM_API_URL,
 		USER_STATS_ENDPOINT,
-		"GetNumberOfCurrentPlayers",
+		"/GetNumberOfCurrentPlayers",
 		"/v1",
 		map[string]interface{}{
 			"appid": id,

@@ -12,7 +12,7 @@ func GetAppList() ([]byte, error){
 		APP_ENDPOINT,
 		"/GetAppList",
 		"/v2",
-		nil,
+		map[string]interface{}{},
 	)
 }
 

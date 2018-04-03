@@ -35,9 +35,9 @@ type (
 		Reviews             string             `json:"reviews"`
 		HeaderImage         string             `json:"header_image"`
 		Website             string             `json:"website"`
-		PCRequirements      map[string]string  `json:"pc_requirements"`
-		MacRequirements     []interface{}      `json:"mac_requirements"`
-		LinuxRequirements   []interface{}      `json:"linux_requirements"`
+		PCRequirements      interface{}        `json:"pc_requirements"` // 可能是slice。也可能是map
+		MacRequirements     interface{}        `json:"mac_requirements"`
+		LinuxRequirements   interface{}        `json:"linux_requirements"`
 		LegalNotice         string             `json:"legal_notice"`
 		Developers          []string           `json:"developers"`
 		Publishers          []string           `json:"publishers"`

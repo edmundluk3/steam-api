@@ -45,3 +45,16 @@ func TestPrice(t *testing.T) {
 
 	log.Printf("%v", price)
 }
+
+func TestDetailBadData(t *testing.T) {
+	ids := []model.SteamAppID{92, 70}
+
+	for _, i := range ids {
+		detail, err := Detail(i, "zh-cn", "cc")
+		if err != nil {
+			t.Errorf("%v", err)
+		}
+
+		log.Printf("%v", detail)
+	}
+}

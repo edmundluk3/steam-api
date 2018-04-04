@@ -53,7 +53,7 @@ func Detail(id model.SteamAppID, language string, cc string) (*model.AppDetail, 
 	}
 
 	if !found {
-		return nil, errors.New(steamErr.ErrorMap[400])
+		return nil, errors.New(steamErr.ErrorMap[404])
 	}
 
 	resp.Language = language

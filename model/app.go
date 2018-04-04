@@ -54,6 +54,9 @@ type (
 		ReleaseDate AppReleaseDate `json:"release_date"`
 		SupportInfo AppSupportInfo `json:"support_info"`
 		Background  string         `json:"background"`
+		//
+		Language string `json:"language"`
+		CurrencyCode string `json:"cc"`
 	}
 
 	AppPriceList map[string]AppPriceData

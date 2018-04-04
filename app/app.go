@@ -55,6 +55,8 @@ func Detail(id model.SteamAppID, language string, cc string) (*model.AppDetail, 
 		return &model.AppDetail{}, nil
 	}
 
+	resp.Language = language
+	resp.CurrencyCode = cc
 	return &resp, nil
 
 }

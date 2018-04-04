@@ -4,6 +4,7 @@ import (
 	"github.com/edmundluk3/steam-api/api"
 	"github.com/edmundluk3/steam-api/model"
 	steamErr "github.com/edmundluk3/steam-api/error"
+	steamConst "github.com/edmundluk3/steam-api/constant"
 	"encoding/json"
 	"strconv"
 	_ "log"
@@ -26,7 +27,7 @@ func List() (*model.AppList, error) {
 }
 
 func Detail(id model.SteamAppID, language string, cc string) (*model.AppDetail, error) {
-	resByte, err := api.GetAppDetail(id, language, cc)
+	resByte, err := api.GetAppDetail(id, steamConst.LanguageCode[language], cc)
 	if err != nil {
 		return nil, err
 	}

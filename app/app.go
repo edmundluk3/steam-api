@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"strconv"
 	_ "log"
+	"errors"
 )
 
 func List() (*model.AppList, error) {
@@ -52,7 +53,7 @@ func Detail(id model.SteamAppID, language string, cc string) (*model.AppDetail, 
 	}
 
 	if !found {
-		return &model.AppDetail{}, nil
+		return nil, errors.New(steamErr.ErrorMap[400])
 	}
 
 	resp.Language = language

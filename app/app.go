@@ -46,13 +46,13 @@ func Detail(id model.SteamAppID, language string, cc string) (*model.AppDetail, 
 	found := false
 
 	for k, v := range list {
-		if i, err := strconv.ParseInt(k, 10, 32); !found && err == nil && model.SteamAppID(i) == id {
+		if i, err := strconv.ParseInt(k, 10, 32); !found && err == nil && model.SteamAppID(i) == id && v.Success {
 			resp = v.Data
 			found = true
 		}
 	}
 
-	if !found {
+	if !found{
 		return nil, errors.New(steamErr.ErrorMap[404])
 	}
 
